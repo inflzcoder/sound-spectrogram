@@ -139,7 +139,7 @@ camera_x = 0
 camera_y = 0
 
 held_time = 4
-camera_speed = 10
+camera_speed = 15
 
 #objs = np.append(objs, [Mass(x=80, y=127, x_vec=0, y_vec=-2, mass=50)])
 #objs = np.append(objs, [Mass(x=160, y=127, x_vec=0, y_vec=3, mass=20)])
@@ -249,7 +249,7 @@ def draw():
 	px.cls(0)
 	for obj in objs:
 		obj.render()
-	px.text(5, 255-10, mouse.name, 6)
+	px.text(215, 255-10, mouse.name, 6)
 	if "render" in dir(mouse): mouse.render()
 	if not time_enabled: px.text(5, 255-20, "PAUSED", 6)
 
