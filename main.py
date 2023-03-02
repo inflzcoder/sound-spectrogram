@@ -2,6 +2,9 @@ import pyxel as px
 import numpy as np
 from math import sqrt, pi, cos, sin
 from random import choice
+import pyautogui as pgu
+
+initial_width, initial_height = pgu.size()
 
 class MouseCreate:
 	def __init__(self):
@@ -122,8 +125,10 @@ def mtor(mass):
 
 def rtom(radius):
 	return pi*radius**2
-
-px.init(1920, 1080)
+if initial_width != 1920 and initial_height != 1080:
+        px.init(1280, 720)
+else:
+        px.init(1920, 1080)
 px.mouse(True)
 
 objs = np.array([])
@@ -249,7 +254,7 @@ def draw():
 	px.cls(0)
 	for obj in objs:
 		obj.render()
-	px.text(215, 255-10, mouse.name, 6)
+	px.text(5, 255-10, mouse.name, 6)
 	if "render" in dir(mouse): mouse.render()
 	if not time_enabled: px.text(5, 255-20, "PAUSED", 6)
 

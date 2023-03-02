@@ -2,6 +2,7 @@ import pyxel as px
 import numpy as np
 from math import sqrt, pi, cos, sin
 from random import choice
+import pyautogui as pgu
 # -*- mode: python ; coding: utf-8 -*-
 
 
